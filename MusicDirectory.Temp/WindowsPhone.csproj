@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FEF4ED2-2366-48BD-90B0-B01E253B280C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>Microsoft.WPSync</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Microsoft.WPSync</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\Libs\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\Libs\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.ITunesWrapper">
+      <HintPath>..\Libs\Microsoft.WPSync.ITunesWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Settings">
+      <HintPath>..\Libs\Microsoft.WPSync.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Sync.Engine">
+      <HintPath>..\Libs\Microsoft.WPSync.Sync.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Sync.Rules">
+      <HintPath>..\Libs\Microsoft.WPSync.Sync.Rules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Sync.Source.iTunes">
+      <HintPath>..\Libs\Microsoft.WPSync.Sync.Source.iTunes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Sync.Source.WindowsLibraries">
+      <HintPath>..\Libs\Microsoft.WPSync.Sync.Source.WindowsLibraries.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Sync.Source.Zmdb">
+      <HintPath>..\Libs\Microsoft.WPSync.Sync.Source.Zmdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Transcoding">
+      <HintPath>..\Libs\Microsoft.WPSync.Transcoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.UI.Logging">
+      <HintPath>..\Libs\Microsoft.WPSync.UI.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.WPSync.Shared">
+      <HintPath>..\Libs\Microsoft.WPSync.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WPSync.Device">
+      <HintPath>..\Libs\Microsoft.WPSync.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Controls\IExpandable.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Controls\TreeListBox.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Controls\TreeListBoxInfo.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Controls\TreeListBoxItemCreatedEventArgs.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Controls\TreeListBoxItem.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\IMainViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignMainViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\IDeviceViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignDeviceViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignDeviceItem.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IMainFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\MainFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\IPartnershipClient.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\ISyncFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\ISyncPartnership.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\ContentLoadedType.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\PartnershipState.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\ContentLoadedEventArgs.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\PartnershipStateChangeEventArgs.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\SyncStoppedEventArgs.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\ISyncRepository.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\MediaSyncSourceFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\SyncFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\SyncPartnership.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\SyncRepository.cs" />
+    <Compile Include="Microsoft\WPSync\UI\DependencyContainer.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\IMediaContentViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignContentViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignSyncSelectionOption.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignSyncOptionList.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignSyncRules.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignDevice.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IMainController.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignMainController.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignSyncPartnership.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\IStorageGaugeViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\StorageGaugeViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignStorageGaugeViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\ISyncProgressViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\SyncProgressViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Design\DesignSyncProgressViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IDeviceEnumerationListener.cs" />
+    <Compile Include="Microsoft\WPSync\UI\DeviceEnumerationListener.cs" />
+    <Compile Include="Microsoft\WPSync\UI\SyncStartType.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ApplicationInitializationException.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IWindow.cs" />
+    <Compile Include="Microsoft\WPSync\UI\DialogType.cs" />
+    <Compile Include="Microsoft\WPSync\UI\MainController.cs" />
+    <Compile Include="Microsoft\WPSync\UI\MainControllerFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\MainWindow.cs" />
+    <Compile Include="Microsoft\WPSync\UI\WindowAdapter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\MainWindowAdapter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Models\SyncSelectionsModelFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\IErrorLogger.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\ErrorLogger.cs" />
+    <Compile Include="Microsoft\WPSync\UI\FloatToStarLengthConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\ISqmHelper.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\ISyncSourcePreloader.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ListHasMultipleConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\NotBoolToVisibilityConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\ReflectionHelper.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\KeyboardHelper.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\SqmHelper.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\SyncSourcePreloader.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Utilities\SystemParametersProxy.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\ISettingsViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\AppSettingsViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\IDevicePropertiesViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DevicePropertiesViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DeviceSettingsViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DeviceItemType.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DeviceItemViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DeviceViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\DialogViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\ErrorsViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IViewModelFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\MainViewState.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\ContentViewState.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModelFactory.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\MainViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\MediaContentViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\PodcastEpisodeRuleViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\PodcastsSelectionItem.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\ConnectedPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\RelayCommand.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Errors.cs" />
+    <Compile Include="Microsoft\WPSync\UI\BoolAndBoolConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\BoolToNotBoolConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\IsNullBoolConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\TwoBoolsAsFirstAndNotSecondConverter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\SelectableOptionViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\LabelSorter.cs" />
+    <Compile Include="Microsoft\WPSync\UI\ViewModels\SyncOptionListViewModel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\TimeoutWarningDialog.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\SettingsPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\DeviceChooser.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\DeviceLockedPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\FirstConnectPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PhonePodcastsPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PhoneMoviesPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PhonePhotosPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PhoneMusicPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PCPhotosPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PCPodcastsPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PCRingtonesPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PCMoviesPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\StorageGaugePanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\StorageColors.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\SyncErrorsPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\SyncProgressPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\TimedOutDialog.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\UnconnectedPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\PCMusicPanel.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Views\ListViewItemStyleSelector.cs" />
+    <Compile Include="Microsoft\WPSync\UI\App.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Properties\Resources.cs" />
+    <Compile Include="Microsoft\WPSync\UI\Properties\Settings.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <EmbeddedResource Include="Microsoft.WPSync.UI.Properties.Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="TranscoderLibrary">
+      <Guid>{A23EF119-A89C-4793-8BDE-ED97F8BB7485}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WictorDeviceManagerLibrary">
+      <Guid>{647AD0DA-2E16-4D2C-BFDB-9B424871EFB1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+</Project>
